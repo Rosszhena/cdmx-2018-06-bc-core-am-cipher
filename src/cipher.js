@@ -1,37 +1,36 @@
-//window.cipher = {
-  // ...
+window.cipher = {
+  offset : 33,
+  encode: (string, offset)  => {
 
-//};
-const cipher  = () => {
-  let cadena = document.getElementById("cadena").value;
-  let iteraciones = parseInt(document.getElementById("iteraciones").value);
-  let cifrado="";
-  for(let i=0; i < cadena.length; i++){
-    let codAsc = cadena[i].toUpperCase().charCodeAt(); //Obtiene el codigo ASCII de la letra en la posicion q se le indica
+    let cifrado="";
+    for(let i=0; i< string.length; i++){
+      let codAsc = string[i].toUpperCase().charCodeAt(); //Obtiene el codigo ASCII de la letra en la posicion q se le indica
+      if(codAsc == 32   ){
+        cifrado += string[i];
+      }
+      else {
+        cifrado +=String.fromCharCode((codAsc - 65 + Number(offset))% 26 + 65);
+        console.log(cifrado);
+      }
+  }  //llave for
 
-    if(codAsc == 32 || ){
-      cifrado += cadena[i];
-      console.log(codAsc);
-    } else {
-      let formula =(cadena[i].toUpperCase().charCodeAt() - 65 + iteraciones)% 26 + 65;
-      console.log(formula);
-      cifrado +=String.fromCharCode(formula);
-    }
+  return cifrado;
+},//llave encodehoall
 
+ decode: (string, offset) => {
 
-}  //llave for
-document.getElementById("resultado").value=cifrado;
-return cifrado;
-}
-// const desencriptar= () =>{
-//   let cadena = document.getElementById("cadena").value;
-//   let iteraciones = parseInt(document.getElementById("iteraciones").value);
-//   let codAsc;
-//   let descifrado="";
-//   for(let i=0; i < cadena.length; i++){
-//     codAsc = cadena.toUpperCase().charCodeAt(i); //Obtiene el codigo ASCII de la letra en la posicion q se le indica
-//     descifrado+=String.fromCharCode((codAsc + 65 - iteraciones)% 26 + 65);
-//
-// }
-// document.getElementById("resultado").value=descifrado;
-// }
+     let descifrado="";
+     for(let i=0; i < string.length; i++){
+       let codAsc = string[i].toUpperCase().charCodeAt(); //Obtiene el codigo ASCII de la letra en la posicion q se le indica
+
+       if(codAsc == 32   ){
+         descifrado += string[i];
+       }
+       else {
+         descifrado+=String.fromCharCode((codAsc + 65 - Number(offset))% 26 + 65);
+   }
+    //document.getElementById("resultado").value=descifrado;
+   }
+   return descifrado;
+ }
+};

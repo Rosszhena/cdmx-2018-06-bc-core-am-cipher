@@ -6,7 +6,7 @@ let resultado = document.getElementById("resultado");
 
 botonEncode.addEventListener("click", event =>{
 resultado.value = window.cipher.encode(string.value,offset.value);
-console.log(resultado);
+//console.log(resultado);
 //resultado.defaulValue = cifrado;
 
 }
@@ -14,7 +14,7 @@ console.log(resultado);
 
 botonDecode.addEventListener("click", event =>{
 resultado.value = window.cipher.decode(string.value,offset.value);
-console.log(resultado);
+//console.log(resultado);
 //resultado.defaulValue = cifrado;
 
 }

@@ -42,7 +42,14 @@ window.cipher = {
     //document.getElementById("resultado").value=descifrado;
    return descifrado;
  },
- createCipherWithOffset:()=>{
-   //return window.encode + window.decode;
- }
+ createCipherWithOffset :(offset) => {
+
+    let objectWithOffset = {
+     encodeo:encodeOffset= window.cipher.encode(offset),
+     decode: decodeOffset= window.cipher.decode(offset)
+   }
+
+   return objectWithOffset;
+
 }
+};

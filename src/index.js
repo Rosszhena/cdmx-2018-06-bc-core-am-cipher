@@ -19,3 +19,5 @@ resultado.value = window.cipher.decode(string.value,offset.value);
 
 }
 );
+
+window.createCipherWithOffset.addListener(offset, callback);

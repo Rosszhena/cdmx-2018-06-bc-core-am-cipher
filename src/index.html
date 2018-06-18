@@ -1,28 +1,120 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cifrado Cesar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.1/examples/carousel/carousel.css" rel="stylesheet">
+
   </head>
+
   <body>
-     <header>
-       <h3>Cifrado Cesar</h3>
-     </header>
-     <main>
-       <section>
-         <div>
-          <p>Ingresa el texto a cifrar o descifrar</p><br>
-          <input type="text" id="cadena"/><br>
-          <p>Iteraciones</p>
-          <input type="text" id="iteraciones"/><br>
-          <p id="hola">Resultado<strong></strong></p>
-          <input type="text" id="resultado"/><br><br>
-           <button type="submit" id="encode" name ="encriptar"> Cifrado</button>
--          <button type="submit" id="decode" name="desencripta"> Descifrado</button><br><br>
-         </div>
-       </section>
-     </main>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">El cifrado César es uno de los
+primeros métodos de cifrado conocidos históricamente. Es un tipo de cifrado por
+sustitución en el que una letra en el texto original es reemplazada por otra
+letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contacto</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">ross.zhena@gmail.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            Inicio
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Cifrado Cesar</h1>
+          <p class="lead text-muted">Te gustaria enviar un mensaje cifrado a tus amigos?</p>
+          <p class="lead text-muted">Si es así nosotros te ayudamos a encriptar y desencriptar tu mensaje:</p>
+          <input type="text" id="cadena" placeholder="Ingresa el texto a cifrar o descifrar"/>
+          <input type="text" id="iteraciones" placeholder="Key"/><br><br>
+          <!--  <button type="submit" id="encode" name ="encriptar"> Cifrado</button>
+-         <button type="submit" id="decode" name="desencripta"> Descifrado</button><br><br>-->
+            <a href="#" id="encode" class="btn btn-primary my-2">Cifrar</a>
+            <a href="#" id="decode" class="btn btn-secondary my-2">Descifrar</a><br><br>
+            <input type="text" id="resultado" placeholder="Resultado"/>
+        </div>
+      </section>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                  <p class="card-text"><strong>Paso1</strong></p>
+                  <p class="card-text">Debes ingresar la cadena a cifrar o desifrar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                <p class="card-text"><strong>Paso2</strong></p>
+                  <p class="card-text">En el campo Key ingresar número de saltos entre letras para cifrado o decifrado.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                  <p class="card-text"><strong>Paso3</strong><p>
+                  <p class="card-text">Finalmente selecciona el boton encriptar o decencriptar.</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p> &copy; Proyecto Cifrado Cesar!</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
     <div id="root"></div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
